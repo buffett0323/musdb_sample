@@ -1,7 +1,7 @@
 """ Buffett 0908 """
 
 from unet import SimpleUNet, UNet
-from dataset import MUSDBDataset, audio_to_spectrogram, spectrogram_to_audio
+from dataset import MUSDBDataset, audio_to_spectrogram, spectrogram_to_audio, MusdbDataset
 import musdb
 import torch
 import torchaudio
@@ -19,7 +19,7 @@ best_val_loss = float('inf')
 epochs_without_improvement = 0
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 batch_size = 256
-num_epochs = 1
+num_epochs = 100
 lr = 1e-3
 
 # Function to perform validation
